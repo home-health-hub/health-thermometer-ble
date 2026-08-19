@@ -1,4 +1,4 @@
-# ble-health-thermometer
+# health-thermometer-ble
 
 A standalone Python Bluetooth LE client for **standard Health
 Thermometer Profile** devices. Unlike this project's other drivers,
@@ -40,7 +40,7 @@ make treatment decisions. Read your thermometer's own display for that.
 - Reads a single temperature measurement, decoded from the standard
   Temperature Measurement characteristic (unit, optional timestamp,
   optional temperature-type/body-site all handled per spec).
-- Ships a `ble-health-thermometer` CLI for one-off use without writing
+- Ships a `health-thermometer-ble` CLI for one-off use without writing
   any code.
 - Nothing here uploads anywhere. Reads stay local.
 
@@ -59,14 +59,14 @@ make treatment decisions. Read your thermometer's own display for that.
 ## Installation
 
 ```bash
-pip install git+https://github.com/home-health-hub/ble-health-thermometer.git
+pip install git+https://github.com/home-health-hub/health-thermometer-ble.git
 ```
 
 ## Library usage
 
 ```python
 import asyncio
-from ble_health_thermometer import ThermometerBleClient, discover
+from health_thermometer_ble import ThermometerBleClient, discover
 
 async def main():
     devices = await discover()
@@ -84,19 +84,19 @@ asyncio.run(main())
 
 ```bash
 # Scan for and list nearby devices
-ble-health-thermometer --discover
+health-thermometer-ble --discover
 
 # Print device info and exit
-ble-health-thermometer --info
+health-thermometer-ble --info
 
 # Take one reading, print as JSON
-ble-health-thermometer
+health-thermometer-ble
 
 # Connect to a specific device address instead of scanning
-ble-health-thermometer --address AA:BB:CC:DD:EE:FF
+health-thermometer-ble --address AA:BB:CC:DD:EE:FF
 ```
 
-Run `ble-health-thermometer --help` for all options.
+Run `health-thermometer-ble --help` for all options.
 
 ## Protocol notes
 
@@ -111,7 +111,7 @@ writeup; summary below:
   Flags byte (unit, timestamp-present, temperature-type-present bits),
   IEEE-11073 32-bit FLOAT value, optional standard date-time struct,
   optional standard Temperature Type enum. See
-  [`protocol.py`](src/ble_health_thermometer/protocol.py) for the exact
+  [`protocol.py`](src/health_thermometer_ble/protocol.py) for the exact
   byte layout, each field documented at the point it's decoded.
 - **Battery Level** (`0x2A19`, read, standard Battery Service `0x180F`):
   read once as part of device info.
@@ -147,8 +147,8 @@ writeup; summary below:
 
 Contributions are welcome!
 
-- **Bug reports**: [Open an issue](https://github.com/home-health-hub/ble-health-thermometer/issues).
-- **Everything else** (questions, feature requests, ideas, general discussion): [Use Discussions](https://github.com/home-health-hub/ble-health-thermometer/discussions).
+- **Bug reports**: [Open an issue](https://github.com/home-health-hub/health-thermometer-ble/issues).
+- **Everything else** (questions, feature requests, ideas, general discussion): [Use Discussions](https://github.com/home-health-hub/health-thermometer-ble/discussions).
 - Pull requests are welcome for bug fixes or discussed features.
 
 ## Acknowledgments

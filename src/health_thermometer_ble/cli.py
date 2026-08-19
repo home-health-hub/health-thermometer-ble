@@ -14,7 +14,7 @@ from ._version import __version__
 from .client import ThermometerBleClient, ThermometerError, discover
 from .const import DEFAULT_READ_TIMEOUT_SECONDS
 
-_LOGGER = logging.getLogger("ble_health_thermometer")
+_LOGGER = logging.getLogger("health_thermometer_ble")
 
 
 def _print_json(obj) -> None:
@@ -80,7 +80,7 @@ def _parse_args(argv: list[str] | None) -> argparse.Namespace:
 
 
 def main(argv: list[str] | None = None) -> None:
-    """Entry point for the ble-health-thermometer console script."""
+    """Entry point for the health-thermometer-ble console script."""
     args = _parse_args(argv)
     logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO)
 

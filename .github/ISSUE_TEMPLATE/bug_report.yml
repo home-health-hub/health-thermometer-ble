@@ -1,5 +1,5 @@
 name: Bug report
-description: Report a problem with ble-health-thermometer
+description: Report a problem with health-thermometer-ble
 labels: ["bug"]
 body:
   - type: input
@@ -13,7 +13,7 @@ body:
     id: version
     attributes:
       label: Package version
-      description: Output of `pip show ble-health-thermometer` or the commit/tag in use
+      description: Output of `pip show health-thermometer-ble` or the commit/tag in use
     validations:
       required: true
   - type: input
