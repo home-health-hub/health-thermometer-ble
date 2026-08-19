@@ -1,0 +1,44 @@
+name: Bug report
+description: Report a problem with ble-health-thermometer
+labels: ["bug"]
+body:
+  - type: input
+    id: device
+    attributes:
+      label: Device
+      description: Manufacturer and model (e.g. iHealth TS28B, Beurer FT95, or another Health Thermometer Profile device)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      description: Output of `pip show ble-health-thermometer` or the commit/tag in use
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      description: OS, Python version, and BLE backend (e.g. Linux + BlueZ version, macOS, Windows)
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: What did you run, and what happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log output
+      description: Run with `--verbose` (CLI) or `logging.basicConfig(level=logging.DEBUG)` and paste relevant output.
+      render: shell

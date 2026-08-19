@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ble-health-thermometer"
+version = "0.1.0"
+description = "Standalone Python Bluetooth LE client for standard Health Thermometer Profile devices"
+readme = "README.md"
+license = "GPL-3.0-only"
+requires-python = ">=3.11"
+dependencies = [
+    "bleak>=0.21.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/home-health-hub/ble-health-thermometer"
+
+[project.scripts]
+ble-health-thermometer = "ble_health_thermometer.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "flake8>=7.0.0",
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.24.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ble_health_thermometer"]
