@@ -4,7 +4,7 @@ import datetime
 
 import pytest
 
-from ble_health_thermometer.protocol import (
+from health_thermometer_ble.protocol import (
     decode_ieee11073_float,
     parse_temperature_measurement,
 )

@@ -1,4 +1,4 @@
-# Project notes for ble-health-thermometer
+# Project notes for health-thermometer-ble
 
 ## What makes this repo different from its siblings
 
